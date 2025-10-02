@@ -11,9 +11,15 @@ cask "laserguide" do
 
   depends_on macos: ">= :sequoia"
 
-  # アップグレード時にも既存プロセスを終了
+  # アップグレード時にも既存プロセスを終了（エラーは無視）
   preflight do
-    system_command "/usr/bin/pkill", args: ["-f", "LaserGuide"], sudo: false
+    system_command "/usr/bin/pkill",
+                   args:         ["-f", "LaserGuide"],
+                   sudo:         false,
+                   print_stderr: false
+  rescue StandardError
+    # プロセスが見つからない場合はエラーを無視
+    nil
   end
 
   app "LaserGuide.app"
