@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 cask "laserguide" do
-  version "0.6.4"
-  sha256 "e1162fa7b5801150295001400ce2b1f9313df1b430a56d9d619437182f085047"
+  version "0.6.5"
+  sha256 "cbde5dd09d3676490e1dd6f32a3bac400c2e4d947c7cf9045fab2bc4049c96e8"
 
   url "https://github.com/kawaz/LaserGuide/releases/download/v#{version}/LaserGuide-#{version}.zip"
   name "LaserGuide"
